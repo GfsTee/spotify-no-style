@@ -1,0 +1,14 @@
+<%- include('partials/head') %>
+
+    <h1>Tracks</h1>
+
+    <%# JSON.stringify(tracks) %>
+        <% tracks.forEach(track=> {%>
+            <% if (track.preview_url.length> 0) {%>
+                <p>
+                    <%= track.name %>
+                </p>
+                <audio src=<%=track.preview_url %> controls></audio>
+                <%} %>
+                    <%})%>
+                        <%- include('partials/footer') %>

@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+    <h1>Albums</h1>
+    <%# JSON.stringify(albums) %>
+        <% albums.items.forEach(album=> { %>
+            <figure>
+                <% if (album.images[0] !=undefined ) {%>
+                    <img src=<%=album.images[0].url %> alt=<%= album.name %>>
+                        <%} else {%>
+                            :'(
+                            <% } %>
+
+                                <figcaption>
+                                    <%= album.name %>
+                                        <a href="/tracks/<%= album.id %>">Show Album</a>
+                                </figcaption>
+            </figure>
+            <%}) %>
+                <a href=<%=site-2 %>>Show previous albums</a>
+                <a href=<%=site %>>Show next albums</a>
+                <%- include('partials/footer') %>

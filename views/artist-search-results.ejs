@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+
+    <h1>Search result:</h1>
+    <%# JSON.stringify(searchResult) %>
+        <% searchResult.forEach(artist=> {%>
+            <figure>
+                <figcaption>
+                    <% if (artist.images.length>0 ) {%>
+                        <img src=<%=artist.images[0].url %> alt=<%= artist.name %>>
+                            <%} else {%>
+                                :'(
+                                <% } %>
+                                    <p>
+                                        <%= artist.name %>
+                                    </p>
+                                    <a href="/albums/<%= artist.id%>/0">Show Albums</a>
+                </figcaption>
+            </figure>
+            <%})%>
+                <%- include('partials/footer') %>
